@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8080:8080"
+    # hostname: localhost
+    # networks:
+    #   - learning
+    depends_on:
+      - database
+    # volumes:
+    #   - .:/app
+
+  database:
+    # container_name: database
+    image: postgres:12.8
+    restart: always
+    environment:
+      - POSTGRES_USER=shyam
+      - POSTGRES_PASSWORD=password@123
+      - POSTGRES_DB=new_db
+    # hostname: localhost
+    ports:
+      - "5432:5432"
+    # networks:
+    #   - learning
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+# volumes:
+#   db:
+# networks:
+#   learning:
+#     driver: bridge
+volumes:
+  pgdata: {}
