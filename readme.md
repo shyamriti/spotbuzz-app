@@ -1,15 +1,24 @@
 # Assignment
 
+## Requirements
 
-##  How to run
+- Go (Golang) version 1.16 or higher
+- MongoDB
 
-### Below command to download/update all the modules/packages used in the project 
+## Getting Started
 
-``` go mod download ```   
+1. Clone the repository to your local machine:
 
-### To run the rest api run this command
- 
-```   go run main.go   ```   
+* git clone https://github.com/shyamriti/spotbuzz-app.git
+* cd golang-crud-api
+
+## To install the dependancy
+
+go mod tidy
+
+## Run the application
+
+go run main.go
 
 ## Folder structer
 * Controller Folder Contains all the endpoint functions
@@ -38,5 +47,4 @@
 
 ## To run the application using Docker, use the following commands:
 
-* docker build -t my-app .
-* docker run -p 8080:8080 my-app
+* docker-compose up --build
